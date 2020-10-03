@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -51,7 +52,6 @@ public class JwtTokenProvider {
 
     // Request의 Header에서 token 추출
     public String resolveToken(HttpServletRequest request) {
-        System.out.println("호출2");
         return request.getHeader(HEADER_STRING);
     }
 

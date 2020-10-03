@@ -4,7 +4,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
+import java.security.Principal;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -14,9 +17,18 @@ import java.util.UUID;
 @EnableJpaAuditing // JPA Auditing 활성화
 public class JpaConfig {
 
-    // TODO: JWT 를 SecurityContextHolder 에서 꺼내서 사용자 정보 셋팅
     @Bean
     public AuditorAware<String> auditorProvider() {
-        return () -> Optional.of(UUID.randomUUID().toString());
+        return () -> {
+//            if(SecurityContextHolder.getContext().getAuthentication() != null){
+//                return Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication().getName());
+//            } else {
+//                return Optional.empty();
+//            }
+            Optional<Authentication> authentication = Optional.ofNullable(SecurityContextHolder.getContext().getAuthentication());
+            return authentication.map(Principal::getName);
+        };
     }
+
+
 }
