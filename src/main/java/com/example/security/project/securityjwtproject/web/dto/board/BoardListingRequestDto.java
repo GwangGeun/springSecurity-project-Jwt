@@ -3,10 +3,10 @@ package com.example.security.project.securityjwtproject.web.dto.board;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Getter
 public class BoardListingRequestDto {
 
-    private final int page;
-    private final int size;
+    private int page;
+    private int size;
 }

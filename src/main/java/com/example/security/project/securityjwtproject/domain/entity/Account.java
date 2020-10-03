@@ -1,5 +1,6 @@
 package com.example.security.project.securityjwtproject.domain.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -33,5 +34,12 @@ public class Account {
     @Column(name = "updated_by")
     private String updatedBy;
 
+    @Builder
+    public Account(String email, String password, String name, String gender){
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.gender = gender;
+    }
 
 }

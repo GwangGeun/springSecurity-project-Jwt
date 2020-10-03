@@ -2,10 +2,12 @@ package com.example.security.project.securityjwtproject.web.dto.board;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotBlank;
 
-@Data
+//@Data
+@Getter
 public class BoardUpdateRequestDto {
 
     @NotBlank(message = "title 이 없습니다.")
