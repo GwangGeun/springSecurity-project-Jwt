@@ -23,9 +23,6 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-### CUSTOMIZE ###
-!**/src/main/resources/application.yml
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -37,4 +34,4 @@ out/
 .vscode/
 
 ### TEST ###
-/src/main/resources/
+/src/main/resources/application.yml
