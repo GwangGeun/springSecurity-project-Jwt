@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### TEST ###
-./src/main/resources/
+/src/main/resources/
