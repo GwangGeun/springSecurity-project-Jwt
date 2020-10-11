@@ -15,11 +15,11 @@ public class Board extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idfBoard")
+    @Column(name = "idf_board")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "idfAccount")
+    @JoinColumn(name = "idf_account")
     private Account account;
 
     private String title;

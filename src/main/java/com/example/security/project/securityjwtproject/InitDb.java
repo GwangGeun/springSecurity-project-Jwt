@@ -17,7 +17,7 @@ public class InitDb {
 
     @PostConstruct
     public void init() {
-        initService.insertAccout();
+//        initService.insertAccout();
     }
 
     @Component

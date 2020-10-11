@@ -16,7 +16,7 @@ public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idfAccount")
+    @Column(name = "idf_account")
     private Long id;
 
     private String email;
